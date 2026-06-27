@@ -1,1 +1,595 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dra. Silvana Creste — Biotecnologia vegetal · Genética · Cana-de-açúcar</title>
+<meta name="description" content="Dra. Silvana Creste — pesquisadora em biotecnologia vegetal e genética da cana-de-açúcar no Centro de Cana do Instituto Agronômico (IAC).">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Carlito = clone métrico open-source do Calibri (rede de segurança visual) -->
+<link href="https://fonts.googleapis.com/css2?family=Carlito:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --porcelain:#F8F4EC;
+    --porcelain-2:#F2ECE0;
+    --card:#FFFFFF;
+    --petrol:#4F6F76;
+    --petrol-deep:#3C565C;
+    --olive:#869C6E;
+    --brass:#C8A45F;
+    --terracotta:#C78062;
+    --earth:#866C5C;
+    --ink:#232A28;
+    --body:#3E4644;
+    --muted:#737A73;
+    --faint:#9AA09A;
+    --hair:#E3DCCD;
+    --hair-soft:#ECE5D7;
+    --font:"Calibri Light","Calibri","Carlito","Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;
+    --font-strong:"Calibri","Carlito","Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+  body{
+    margin:0;background:var(--porcelain);color:var(--body);
+    font-family:var(--font);font-weight:400;line-height:1.62;font-size:17px;
+    -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  }
+  ::selection{background:var(--petrol);color:#F6F2EB}
+  a{color:inherit}
+  a:focus-visible,.btn:focus-visible,.clink:focus-visible{outline:2px solid var(--brass);outline-offset:3px;border-radius:4px}
+  img{max-width:100%;display:block}
+  h1,h2,h3{font-family:var(--font-strong);color:var(--ink);font-weight:700;letter-spacing:-.01em;margin:0}
 
+  .wrap{max-width:1120px;margin:0 auto;padding:0 clamp(1.2rem,4vw,2.4rem)}
+
+  /* ---------- header ---------- */
+  .topbar{position:sticky;top:0;z-index:40;background:rgba(248,244,236,.82);
+    backdrop-filter:saturate(140%) blur(10px);-webkit-backdrop-filter:saturate(140%) blur(10px);
+    border-bottom:1px solid var(--hair-soft)}
+  .topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .brand{font-family:var(--font-strong);font-weight:700;font-size:1.02rem;letter-spacing:.01em;
+    color:var(--ink);text-decoration:none;display:inline-flex;align-items:center;gap:.6rem}
+  .brand .dot{width:9px;height:9px;border-radius:2px;
+    background:linear-gradient(135deg,var(--petrol) 0 50%,var(--brass) 50% 100%);flex:none}
+  .nav{display:flex;gap:1.6rem;align-items:center}
+  .nav a{text-decoration:none;color:var(--muted);font-size:.92rem;letter-spacing:.01em;
+    position:relative;padding:.2rem 0;transition:color .18s}
+  .nav a::after{content:"";position:absolute;left:0;right:100%;bottom:-2px;height:1.5px;
+    background:var(--brass);transition:right .22s ease}
+  .nav a:hover{color:var(--ink)}
+  .nav a:hover::after{right:0}
+  .nav .cta{color:var(--petrol);font-weight:700}
+  @media(max-width:760px){.nav{display:none}}
+
+  /* ---------- eyebrow / labels ---------- */
+  .eyebrow{font-family:var(--font-strong);font-weight:700;font-size:.72rem;letter-spacing:.2em;
+    text-transform:uppercase;color:var(--earth);display:inline-flex;align-items:center;gap:.7rem;margin:0 0 1.1rem}
+  .node-mark{width:30px;height:10px;flex:none}
+
+  /* ---------- hero ---------- */
+  .hero{padding:clamp(3rem,8vw,6.5rem) 0 clamp(2.4rem,5vw,4rem)}
+  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(2rem,5vw,4.5rem);align-items:center}
+  .hero h1{font-size:clamp(2.6rem,6.2vw,4.4rem);line-height:1.02;letter-spacing:-.022em;margin:.2rem 0 0}
+  .hero .lede{font-size:clamp(1.08rem,1.7vw,1.26rem);color:var(--body);max-width:46ch;
+    margin:1.4rem 0 0;line-height:1.55}
+  .hero .lede strong{color:var(--ink);font-weight:700}
+  .actions{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2rem}
+  .btn{display:inline-flex;align-items:center;gap:.55rem;text-decoration:none;font-family:var(--font-strong);
+    font-weight:700;font-size:.95rem;padding:.78rem 1.4rem;border-radius:999px;transition:transform .15s,background .18s,border-color .18s,color .18s}
+  .btn-primary{background:var(--petrol);color:#F6F2EB;border:1px solid var(--petrol)}
+  .btn-primary:hover{background:var(--petrol-deep);transform:translateY(-2px)}
+  .btn-ghost{background:transparent;color:var(--ink);border:1px solid var(--hair)}
+  .btn-ghost:hover{border-color:var(--brass);color:var(--earth);transform:translateY(-2px)}
+  .btn .arrow{transition:transform .18s}
+  .btn:hover .arrow{transform:translateX(3px)}
+
+  /* portrait + helix */
+  .portrait-wrap{position:relative;display:flex;justify-content:center;align-items:flex-end}
+  .helix{position:absolute;left:-6px;top:-2%;height:104%;width:46px;opacity:.9;z-index:1}
+  .frame{position:relative;z-index:2;width:min(360px,82%);margin-left:auto;margin-right:6%}
+  .frame::before{content:"";position:absolute;inset:14px -14px -14px 14px;border:1px solid var(--brass);
+    border-radius:4px;z-index:-1}
+  .frame .photo{position:relative;border-radius:4px;overflow:hidden;background:var(--porcelain-2);
+    box-shadow:0 24px 60px -28px rgba(60,86,92,.5);aspect-ratio:1014/1520}
+  .frame .photo img{width:100%;height:100%;object-fit:cover;object-position:50% 22%}
+  .frame .photo .fallback{position:absolute;inset:0;display:none;align-items:center;justify-content:center;
+    flex-direction:column;gap:.4rem;background:linear-gradient(160deg,var(--petrol),var(--petrol-deep));color:#EFE7D6}
+  .frame .photo .fallback .ini{font-family:var(--font-strong);font-weight:700;font-size:3.4rem;letter-spacing:.04em}
+  .frame .photo .fallback .cap{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;opacity:.85}
+
+  /* hero -> stacked on tablet/mobile */
+  @media(max-width:860px){
+    .hero{padding-top:clamp(2.2rem,7vw,3.4rem)}
+    .hero-grid{grid-template-columns:1fr;gap:2.6rem}
+    .hero-text{order:1}
+    .portrait-wrap{order:2;justify-content:center;align-items:stretch;gap:16px}
+    .helix{position:static;height:auto;width:34px;opacity:.9;align-self:stretch;flex:none}
+    .frame{width:min(300px,74%);margin:0}
+    .frame::before{inset:12px -12px -12px 12px}
+    .hero .lede{max-width:52ch}
+  }
+
+  /* credential strip */
+  .creds{display:flex;flex-wrap:wrap;gap:.6rem 1.6rem;margin-top:clamp(2.4rem,4vw,3.2rem);
+    padding-top:1.4rem;border-top:1px solid var(--hair);align-items:center}
+  .creds .c{display:inline-flex;align-items:center;gap:.6rem;font-size:.92rem;color:var(--earth)}
+  .creds .c b{font-family:var(--font-strong);font-weight:700;color:var(--ink)}
+  .creds .sep{width:5px;height:5px;border-radius:50%;background:var(--brass);flex:none}
+
+  /* ---------- thesis statement ---------- */
+  .thesis{background:var(--petrol);color:#EFE7D6;margin-top:clamp(3rem,6vw,5rem)}
+  .thesis .wrap{padding:clamp(3.4rem,7vw,6rem) clamp(1.2rem,4vw,2.4rem)}
+  .thesis .eyebrow{color:#D8C79E}
+  .thesis .node-mark line{stroke:#D8C79E}
+  .thesis .node-mark circle:first-of-type{fill:#EFE7D6}
+  .thesis-big{font-family:var(--font-strong);font-weight:700;color:#FBF7EE;
+    font-size:clamp(1.7rem,4.2vw,3rem);line-height:1.16;letter-spacing:-.018em;max-width:20ch}
+  .thesis-big .hl{color:var(--brass)}
+  .thesis-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1.4rem,3vw,2.6rem);
+    margin-top:clamp(2.4rem,4vw,3.4rem);padding-top:clamp(2rem,3vw,2.4rem);
+    border-top:1px solid rgba(216,199,158,.28)}
+  .thesis-cols .tc h3{color:#FBF7EE;font-size:1.06rem;margin:0 0 .4rem;letter-spacing:.01em}
+  .thesis-cols .tc h3 span{color:var(--brass)}
+  .thesis-cols .tc p{margin:0;color:#D9D2C2;font-size:.96rem;line-height:1.55}
+  @media(max-width:680px){.thesis-cols{grid-template-columns:1fr;gap:1.6rem}}
+
+  /* ---------- generic section ---------- */
+  .section{padding:clamp(3.4rem,7vw,6rem) 0}
+  .section-head{max-width:60ch;margin-bottom:clamp(2rem,4vw,3rem)}
+  .section-head h2{font-size:clamp(1.7rem,3.4vw,2.5rem);line-height:1.1;letter-spacing:-.018em}
+  .section-head p{margin:.9rem 0 0;color:var(--muted);font-size:1.05rem;max-width:54ch}
+
+  /* about */
+  .about-grid{display:grid;grid-template-columns:1.5fr .9fr;gap:clamp(2rem,5vw,4rem);align-items:start}
+  .prose p{margin:0 0 1.15rem;color:var(--body);font-size:1.08rem;line-height:1.66;max-width:60ch}
+  .prose p:last-child{margin-bottom:0}
+  .prose .lead{font-size:1.18rem;color:var(--ink)}
+  .prose .name-hl{font-family:var(--font-strong);font-weight:700;color:var(--earth)}
+  .stats{display:flex;flex-direction:column;gap:0;border:1px solid var(--hair);border-radius:8px;
+    background:var(--card);overflow:hidden}
+  .stat{padding:1.2rem 1.4rem;border-bottom:1px solid var(--hair-soft);position:relative}
+  .stat:last-child{border-bottom:0}
+  .stat .num{font-family:var(--font-strong);font-weight:700;color:var(--petrol);
+    font-size:1.9rem;line-height:1;letter-spacing:-.01em}
+  .stat .lab{margin-top:.35rem;font-size:.9rem;color:var(--muted)}
+  .stat::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--brass);opacity:0;transition:opacity .2s}
+  .stat:hover::before{opacity:1}
+  @media(max-width:820px){.about-grid{grid-template-columns:1fr;gap:2.4rem}}
+
+  /* timeline */
+  .timeline{position:relative;margin-top:.5rem;border-left:1px solid var(--hair);
+    padding-left:clamp(1.4rem,3vw,2.2rem)}
+  .tl-item{position:relative;padding:0 0 2rem}
+  .tl-item:last-child{padding-bottom:0}
+  .tl-item::before{content:"";position:absolute;left:calc(-1*clamp(1.4rem,3vw,2.2rem) - 5.5px);top:.45rem;
+    width:11px;height:11px;border-radius:50%;background:var(--porcelain);border:2px solid var(--brass)}
+  .tl-item .year{font-family:var(--font-strong);font-weight:700;color:var(--petrol);font-size:1.02rem;letter-spacing:.02em}
+  .tl-item h3{font-size:1.12rem;margin:.15rem 0 .2rem}
+  .tl-item p{margin:0;color:var(--muted);font-size:.98rem}
+
+  /* research grid */
+  .grid-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--hair);
+    border:1px solid var(--hair);border-radius:10px;overflow:hidden}
+  .rcard{background:var(--card);padding:1.5rem 1.4rem 1.6rem;position:relative;transition:background .2s}
+  .rcard:hover{background:var(--porcelain-2)}
+  .rcard .rnum{font-family:var(--font-strong);font-weight:700;font-size:.78rem;color:var(--brass);
+    letter-spacing:.08em}
+  .rcard h3{font-size:1.06rem;margin:.7rem 0 .45rem;line-height:1.22}
+  .rcard p{margin:0;font-size:.94rem;color:var(--muted);line-height:1.5}
+  @media(max-width:980px){.grid-cards{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:520px){.grid-cards{grid-template-columns:1fr}}
+  .research-note{margin-top:1.4rem;display:flex;gap:.8rem;align-items:flex-start;
+    font-size:.98rem;color:var(--earth);max-width:64ch}
+  .research-note .bar{flex:none;width:3px;align-self:stretch;border-radius:3px;background:var(--brass)}
+
+  /* values */
+  .values-wrap{background:var(--porcelain-2);border-top:1px solid var(--hair);border-bottom:1px solid var(--hair)}
+  .values-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4rem);align-items:center}
+  .vlist{display:flex;flex-direction:column;gap:1rem}
+  .vitem{display:flex;align-items:baseline;gap:1rem}
+  .vitem .vk{font-family:var(--font-strong);font-weight:700;color:var(--brass);font-size:.82rem;
+    letter-spacing:.05em;width:2.4rem;flex:none}
+  .vitem .vt{font-family:var(--font-strong);font-weight:700;color:var(--ink);font-size:1.18rem}
+  .vitem .vd{color:var(--muted);font-size:.96rem;margin-top:.1rem}
+  .pullquote{position:relative;padding-left:1.6rem}
+  .pullquote::before{content:"";position:absolute;left:0;top:.2rem;bottom:.2rem;width:3px;
+    border-radius:3px;background:linear-gradient(var(--brass),var(--olive))}
+  .pullquote q{font-family:var(--font-strong);font-weight:700;color:var(--ink);
+    font-size:clamp(1.4rem,3vw,2rem);line-height:1.22;letter-spacing:-.01em;quotes:none}
+  .pullquote .attr{margin-top:1rem;font-size:.92rem;color:var(--earth);letter-spacing:.02em}
+  @media(max-width:780px){.values-grid{grid-template-columns:1fr;gap:2.6rem}}
+
+  .character{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:2rem;padding-top:1.6rem;border-top:1px solid var(--hair)}
+  .tag{font-family:var(--font-strong);font-weight:700;font-size:.86rem;color:var(--petrol);
+    background:var(--card);border:1px solid var(--hair);border-radius:999px;padding:.45rem 1rem}
+
+  /* legacy */
+  .legacy{text-align:left}
+  .legacy-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(2rem,5vw,4rem);align-items:center}
+  .legacy h2{font-size:clamp(1.9rem,4vw,2.8rem);line-height:1.08;letter-spacing:-.02em}
+  .legacy .big-q{font-family:var(--font-strong);font-weight:700;color:var(--petrol);
+    font-size:clamp(1.5rem,3.4vw,2.2rem);line-height:1.2;letter-spacing:-.01em}
+  .legacy p{margin:1.2rem 0 0;color:var(--body);font-size:1.08rem;line-height:1.66;max-width:56ch}
+  @media(max-width:820px){.legacy-grid{grid-template-columns:1fr;gap:2rem}}
+
+  /* contact */
+  .contact{background:var(--petrol);color:#EFE7D6}
+  .contact .wrap{padding:clamp(3.4rem,7vw,5.5rem) clamp(1.2rem,4vw,2.4rem)}
+  .contact .eyebrow{color:#D8C79E}
+  .contact .node-mark line{stroke:#D8C79E}
+  .contact .node-mark circle:first-of-type{fill:#EFE7D6}
+  .contact h2{color:#FBF7EE;font-size:clamp(1.8rem,3.8vw,2.6rem);max-width:18ch;line-height:1.1}
+  .contact p{color:#D9D2C2;margin:1rem 0 0;max-width:46ch;font-size:1.06rem}
+  .clinks{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2rem}
+  .clink{display:inline-flex;align-items:center;gap:.6rem;text-decoration:none;
+    font-family:var(--font-strong);font-weight:700;font-size:.95rem;color:#FBF7EE;
+    border:1px solid rgba(216,199,158,.4);border-radius:999px;padding:.7rem 1.3rem;transition:background .18s,border-color .18s,transform .15s}
+  .clink:hover{background:rgba(216,199,158,.14);border-color:var(--brass);transform:translateY(-2px)}
+  .clink .ic{color:var(--brass)}
+
+  /* footer */
+  footer.foot{background:var(--petrol-deep);color:#C7C0B2}
+  footer.foot .wrap{padding:1.8rem clamp(1.2rem,4vw,2.4rem);display:flex;justify-content:space-between;
+    gap:1rem;flex-wrap:wrap;font-size:.85rem;letter-spacing:.02em;align-items:center}
+  footer.foot .brand-f{display:inline-flex;align-items:center;gap:.6rem;color:#EFE7D6;font-family:var(--font-strong);font-weight:700}
+  footer.foot .brand-f .dot{width:8px;height:8px;border-radius:2px;background:linear-gradient(135deg,#EFE7D6 0 50%,var(--brass) 50% 100%)}
+
+  /* reveal animation */
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){
+    *{transition:none!important;animation:none!important}
+    .reveal{opacity:1;transform:none}
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="#topo"><span class="dot"></span> Dra. Silvana Creste</a>
+    <nav class="nav" aria-label="Navegação principal">
+      <a href="#sobre">Sobre</a>
+      <a href="#formacao">Formação</a>
+      <a href="#pesquisa">Pesquisa</a>
+      <a href="#visao">Visão</a>
+      <a href="#legado">Legado</a>
+      <a href="#contato" class="cta">Contato</a>
+    </nav>
+  </div>
+</header>
+
+<main id="topo">
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div class="hero-text reveal">
+          <p class="eyebrow"><svg class="node-mark" viewBox="0 0 24 8" aria-hidden="true" focusable="false">
+  <line x1="2" y1="4" x2="22" y2="4" stroke="var(--brass)" stroke-width="1" stroke-linecap="round"/>
+  <circle cx="2" cy="4" r="2" fill="var(--petrol)"/>
+  <circle cx="22" cy="4" r="2" fill="var(--brass)"/>
+</svg> Biotecnologia vegetal · Genética · Cana-de-açúcar</p>
+          <h1>Dra. Silvana<br>Creste</h1>
+          <p class="lede">Pesquisadora em biotecnologia vegetal no <strong>Centro de Cana do Instituto Agronômico (IAC)</strong>. Há mais de duas décadas, traduz genética e edição gênica em soluções reais para a cana-de-açúcar.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="#pesquisa">Conhecer a pesquisa <span class="arrow">&rarr;</span></a>
+            <a class="btn btn-ghost" href="#contato">Entrar em contato</a>
+          </div>
+        </div>
+
+        <div class="portrait-wrap reveal">
+          <svg class="helix" viewBox="0 0 34 360" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false">
+  <g class="helix-rungs" fill="none" stroke="var(--brass)" stroke-width="0.9" stroke-linecap="round">
+    <line x1="17.00" y1="0.00" x2="17.00" y2="0.00"/>
+    <line x1="25.22" y1="16.36" x2="8.78" y2="16.36"/>
+    <line x1="27.23" y1="32.73" x2="6.77" y2="32.73"/>
+    <line x1="21.50" y1="49.09" x2="12.50" y2="49.09"/>
+    <line x1="12.37" y1="65.45" x2="21.63" y2="65.45"/>
+    <line x1="6.74" y1="81.82" x2="27.26" y2="81.82"/>
+    <line x1="8.87" y1="98.18" x2="25.13" y2="98.18"/>
+    <line x1="17.15" y1="114.55" x2="16.85" y2="114.55"/>
+    <line x1="25.31" y1="130.91" x2="8.69" y2="130.91"/>
+    <line x1="27.19" y1="147.27" x2="6.81" y2="147.27"/>
+    <line x1="21.36" y1="163.64" x2="12.64" y2="163.64"/>
+    <line x1="12.23" y1="180.00" x2="21.77" y2="180.00"/>
+    <line x1="6.71" y1="196.36" x2="27.29" y2="196.36"/>
+    <line x1="8.97" y1="212.73" x2="25.03" y2="212.73"/>
+    <line x1="17.30" y1="229.09" x2="16.70" y2="229.09"/>
+    <line x1="25.41" y1="245.45" x2="8.59" y2="245.45"/>
+    <line x1="27.16" y1="261.82" x2="6.84" y2="261.82"/>
+    <line x1="21.23" y1="278.18" x2="12.77" y2="278.18"/>
+    <line x1="12.10" y1="294.55" x2="21.90" y2="294.55"/>
+    <line x1="6.68" y1="310.91" x2="27.32" y2="310.91"/>
+    <line x1="9.06" y1="327.27" x2="24.94" y2="327.27"/>
+    <line x1="17.45" y1="343.64" x2="16.55" y2="343.64"/>
+    <line x1="25.49" y1="360.00" x2="8.51" y2="360.00"/>
+  </g>
+  <path class="helix-strand" d="M 17.00 0.00 L 18.30 2.25 L 19.57 4.50 L 20.81 6.75 L 21.99 9.00 L 23.09 11.25 L 24.10 13.50 L 25.00 15.75 L 25.78 18.00 L 26.42 20.25 L 26.92 22.50 L 27.27 24.75 L 27.46 27.00 L 27.49 29.25 L 27.36 31.50 L 27.08 33.75 L 26.64 36.00 L 26.05 38.25 L 25.32 40.50 L 24.47 42.75 L 23.50 45.00 L 22.43 47.25 L 21.28 49.50 L 20.07 51.75 L 18.81 54.00 L 17.52 56.25 L 16.22 58.50 L 14.93 60.75 L 13.68 63.00 L 12.47 65.25 L 11.34 67.50 L 10.29 69.75 L 9.35 72.00 L 8.52 74.25 L 7.82 76.50 L 7.26 78.75 L 6.85 81.00 L 6.60 83.25 L 6.50 85.50 L 6.57 87.75 L 6.79 90.00 L 7.17 92.25 L 7.70 94.50 L 8.37 96.75 L 9.18 99.00 L 10.10 101.25 L 11.13 103.50 L 12.25 105.75 L 13.44 108.00 L 14.69 110.25 L 15.97 112.50 L 17.27 114.75 L 18.56 117.00 L 19.83 119.25 L 21.06 121.50 L 22.22 123.75 L 23.30 126.00 L 24.29 128.25 L 25.17 130.50 L 25.92 132.75 L 26.54 135.00 L 27.01 137.25 L 27.32 139.50 L 27.48 141.75 L 27.48 144.00 L 27.32 146.25 L 27.00 148.50 L 26.53 150.75 L 25.91 153.00 L 25.16 155.25 L 24.28 157.50 L 23.29 159.75 L 22.20 162.00 L 21.04 164.25 L 19.81 166.50 L 18.54 168.75 L 17.25 171.00 L 15.95 173.25 L 14.67 175.50 L 13.42 177.75 L 12.23 180.00 L 11.12 182.25 L 10.09 184.50 L 9.16 186.75 L 8.36 189.00 L 7.69 191.25 L 7.16 193.50 L 6.79 195.75 L 6.56 198.00 L 6.50 200.25 L 6.60 202.50 L 6.86 204.75 L 7.27 207.00 L 7.83 209.25 L 8.53 211.50 L 9.36 213.75 L 10.31 216.00 L 11.36 218.25 L 12.49 220.50 L 13.70 222.75 L 14.95 225.00 L 16.24 227.25 L 17.54 229.50 L 18.83 231.75 L 20.09 234.00 L 21.30 236.25 L 22.45 238.50 L 23.52 240.75 L 24.48 243.00 L 25.33 245.25 L 26.06 247.50 L 26.64 249.75 L 27.08 252.00 L 27.37 254.25 L 27.49 256.50 L 27.46 258.75 L 27.26 261.00 L 26.91 263.25 L 26.41 265.50 L 25.76 267.75 L 24.98 270.00 L 24.08 272.25 L 23.07 274.50 L 21.97 276.75 L 20.79 279.00 L 19.55 281.25 L 18.28 283.50 L 16.98 285.75 L 15.68 288.00 L 14.41 290.25 L 13.17 292.50 L 12.00 294.75 L 10.90 297.00 L 9.89 299.25 L 8.99 301.50 L 8.21 303.75 L 7.57 306.00 L 7.07 308.25 L 6.73 310.50 L 6.54 312.75 L 6.51 315.00 L 6.64 317.25 L 6.93 319.50 L 7.37 321.75 L 7.96 324.00 L 8.69 326.25 L 9.55 328.50 L 10.52 330.75 L 11.58 333.00 L 12.74 335.25 L 13.95 337.50 L 15.22 339.75 L 16.51 342.00 L 17.80 344.25 L 19.09 346.50 L 20.34 348.75 L 21.55 351.00 L 22.68 353.25 L 23.72 355.50 L 24.67 357.75 L 25.49 360.00" fill="none" stroke="var(--brass)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path class="helix-strand" d="M 17.00 0.00 L 15.70 2.25 L 14.43 4.50 L 13.19 6.75 L 12.01 9.00 L 10.91 11.25 L 9.90 13.50 L 9.00 15.75 L 8.22 18.00 L 7.58 20.25 L 7.08 22.50 L 6.73 24.75 L 6.54 27.00 L 6.51 29.25 L 6.64 31.50 L 6.92 33.75 L 7.36 36.00 L 7.95 38.25 L 8.68 40.50 L 9.53 42.75 L 10.50 45.00 L 11.57 47.25 L 12.72 49.50 L 13.93 51.75 L 15.19 54.00 L 16.48 56.25 L 17.78 58.50 L 19.07 60.75 L 20.32 63.00 L 21.53 65.25 L 22.66 67.50 L 23.71 69.75 L 24.65 72.00 L 25.48 74.25 L 26.18 76.50 L 26.74 78.75 L 27.15 81.00 L 27.40 83.25 L 27.50 85.50 L 27.43 87.75 L 27.21 90.00 L 26.83 92.25 L 26.30 94.50 L 25.63 96.75 L 24.82 99.00 L 23.90 101.25 L 22.87 103.50 L 21.75 105.75 L 20.56 108.00 L 19.31 110.25 L 18.03 112.50 L 16.73 114.75 L 15.44 117.00 L 14.17 119.25 L 12.94 121.50 L 11.78 123.75 L 10.70 126.00 L 9.71 128.25 L 8.83 130.50 L 8.08 132.75 L 7.46 135.00 L 6.99 137.25 L 6.68 139.50 L 6.52 141.75 L 6.52 144.00 L 6.68 146.25 L 7.00 148.50 L 7.47 150.75 L 8.09 153.00 L 8.84 155.25 L 9.72 157.50 L 10.71 159.75 L 11.80 162.00 L 12.96 164.25 L 14.19 166.50 L 15.46 168.75 L 16.75 171.00 L 18.05 173.25 L 19.33 175.50 L 20.58 177.75 L 21.77 180.00 L 22.88 182.25 L 23.91 184.50 L 24.84 186.75 L 25.64 189.00 L 26.31 191.25 L 26.84 193.50 L 27.21 195.75 L 27.44 198.00 L 27.50 200.25 L 27.40 202.50 L 27.14 204.75 L 26.73 207.00 L 26.17 209.25 L 25.47 211.50 L 24.64 213.75 L 23.69 216.00 L 22.64 218.25 L 21.51 220.50 L 20.30 222.75 L 19.05 225.00 L 17.76 227.25 L 16.46 229.50 L 15.17 231.75 L 13.91 234.00 L 12.70 236.25 L 11.55 238.50 L 10.48 240.75 L 9.52 243.00 L 8.67 245.25 L 7.94 247.50 L 7.36 249.75 L 6.92 252.00 L 6.63 254.25 L 6.51 256.50 L 6.54 258.75 L 6.74 261.00 L 7.09 263.25 L 7.59 265.50 L 8.24 267.75 L 9.02 270.00 L 9.92 272.25 L 10.93 274.50 L 12.03 276.75 L 13.21 279.00 L 14.45 281.25 L 15.72 283.50 L 17.02 285.75 L 18.32 288.00 L 19.59 290.25 L 20.83 292.50 L 22.00 294.75 L 23.10 297.00 L 24.11 299.25 L 25.01 301.50 L 25.79 303.75 L 26.43 306.00 L 26.93 308.25 L 27.27 310.50 L 27.46 312.75 L 27.49 315.00 L 27.36 317.25 L 27.07 319.50 L 26.63 321.75 L 26.04 324.00 L 25.31 326.25 L 24.45 328.50 L 23.48 330.75 L 22.42 333.00 L 21.26 335.25 L 20.05 337.50 L 18.78 339.75 L 17.49 342.00 L 16.20 344.25 L 14.91 346.50 L 13.66 348.75 L 12.45 351.00 L 11.32 353.25 L 10.28 355.50 L 9.33 357.75 L 8.51 360.00" fill="none" stroke="var(--petrol)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <g class="helix-nodes" fill="var(--brass)">
+    <circle cx="17.00" cy="0.90" r="1.7"/>
+    <circle cx="17.00" cy="57.60" r="1.7"/>
+    <circle cx="17.00" cy="114.30" r="1.7"/>
+    <circle cx="17.00" cy="171.90" r="1.7"/>
+    <circle cx="17.00" cy="228.60" r="1.7"/>
+    <circle cx="17.00" cy="286.20" r="1.7"/>
+    <circle cx="17.00" cy="342.90" r="1.7"/>
+  </g>
+</svg>
+          <div class="frame">
+            <div class="photo">
+              <img src="Main_Profile_Picture.png" alt="Retrato da Dra. Silvana Creste"
+                   onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+              <div class="fallback" aria-hidden="true">
+                <span class="ini">SC</span>
+                <span class="cap">Dra. Silvana Creste</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="creds reveal">
+        <span class="c"><b>Eng. Agrônoma</b></span>
+        <span class="sep"></span>
+        <span class="c"><b>Mestre</b> em Ciências Biológicas</span>
+        <span class="sep"></span>
+        <span class="c"><b>Doutora</b> em Genética</span>
+        <span class="sep"></span>
+        <span class="c">Centro de Cana · <b>IAC</b>, desde 2005</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== THESIS ===== -->
+  <section class="thesis">
+    <div class="wrap reveal">
+      <p class="eyebrow"><svg class="node-mark" viewBox="0 0 24 8" aria-hidden="true" focusable="false">
+  <line x1="2" y1="4" x2="22" y2="4" stroke="var(--brass)" stroke-width="1" stroke-linecap="round"/>
+  <circle cx="2" cy="4" r="2" fill="var(--petrol)"/>
+  <circle cx="22" cy="4" r="2" fill="var(--brass)"/>
+</svg> A grande questão</p>
+      <p class="thesis-big">A resposta para a mudança climática virá da <span class="hl">biotecnologia</span>, do <span class="hl">bioinsumo</span> e do <span class="hl">biodígito</span>.</p>
+      <div class="thesis-cols">
+        <div class="tc">
+          <h3><span>—</span> Biotecnologia</h3>
+          <p>Genética e edição gênica de precisão para uma cana mais produtiva, resiliente e adaptada ao clima.</p>
+        </div>
+        <div class="tc">
+          <h3><span>—</span> Bioinsumo</h3>
+          <p>Produtos biológicos no lugar dos químicos: nutrição, proteção e saúde do solo a partir da própria biologia.</p>
+        </div>
+        <div class="tc">
+          <h3><span>—</span> Biodígito</h3>
+          <p>Agricultura digital: dados e modelos guiando cada decisão no campo, do plantio à colheita.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SOBRE ===== -->
+  <section class="section" id="sobre">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow"><svg class="node-mark" viewBox="0 0 24 8" aria-hidden="true" focusable="false">
+  <line x1="2" y1="4" x2="22" y2="4" stroke="var(--brass)" stroke-width="1" stroke-linecap="round"/>
+  <circle cx="2" cy="4" r="2" fill="var(--petrol)"/>
+  <circle cx="22" cy="4" r="2" fill="var(--brass)"/>
+</svg> Sobre</p>
+        <h2>Uma paixão que começou como encaminhamento.</h2>
+      </div>
+      <div class="about-grid">
+        <div class="prose reveal">
+          <p class="lead">A genética não foi uma escolha — foi um encaminhamento, uma sucessão de acasos que se tornou vocação. Recém-formada e recém-casada, a Dra. Silvana recebeu de <span class="name-hl">Dra. Catalina Romeiro Lopes</span> uma carta de referência e a oportunidade de um mestrado. Ali nasceu uma paixão cujo tamanho ela ainda não imaginava.</p>
+          <p>As portas foram se abrindo — de Botucatu a Piracicaba, de Piracicaba a Ribeirão Preto. Ao longo de vinte anos, formaram-se mais de cinquenta orientandos e consolidou-se um laboratório que hoje reúne trinta pesquisadores. Desde 2005, é no Centro de Cana do Instituto Agronômico que essa trajetória se aprofunda e ganha escala.</p>
+          <p>O fio condutor sempre foi o mesmo: resolver problemas reais, com rigor científico, transformando conhecimento em inovação. Primeiro vem a pesquisa; dela nascem as parcerias com o setor privado e os projetos que levam a ciência ao campo.</p>
+        </div>
+        <aside class="stats reveal" aria-label="Números da trajetória">
+          <div class="stat"><div class="num">+20</div><div class="lab">anos dedicados à pesquisa</div></div>
+          <div class="stat"><div class="num">+50</div><div class="lab">orientandos formados</div></div>
+          <div class="stat"><div class="num">30</div><div class="lab">pesquisadores no laboratório hoje</div></div>
+          <div class="stat"><div class="num">2005</div><div class="lab">no Centro de Cana · IAC</div></div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FORMACAO ===== -->
+  <section class="section" id="formacao" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow"><svg class="node-mark" viewBox="0 0 24 8" aria-hidden="true" focusable="false">
+  <line x1="2" y1="4" x2="22" y2="4" stroke="var(--brass)" stroke-width="1" stroke-linecap="round"/>
+  <circle cx="2" cy="4" r="2" fill="var(--petrol)"/>
+  <circle cx="22" cy="4" r="2" fill="var(--brass)"/>
+</svg> Formação</p>
+        <h2>Uma trajetória construída entre as melhores escolas do país.</h2>
+      </div>
+      <div class="timeline reveal">
+        <div class="tl-item">
+          <div class="year">1991</div>
+          <h3>Engenharia Agronômica</h3>
+          <p>Faculdade de Ciências Agronômicas — Unesp, Botucatu</p>
+        </div>
+        <div class="tl-item">
+          <div class="year">1997</div>
+          <h3>Mestrado em Ciências Biológicas</h3>
+          <p>Instituto de Biociências</p>
+        </div>
+        <div class="tl-item">
+          <div class="year">2002</div>
+          <h3>Doutorado em Genética</h3>
+          <p>Escola Superior de Agricultura Luiz de Queiroz — ESALQ, USP</p>
+        </div>
+        <div class="tl-item">
+          <div class="year">2005</div>
+          <h3>Pesquisadora no Centro de Cana</h3>
+          <p>Instituto Agronômico de Campinas — IAC</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PESQUISA ===== -->
+  <section class="section" id="pesquisa" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow"><svg class="node-mark" viewBox="0 0 24 8" aria-hidden="true" focusable="false">
+  <line x1="2" y1="4" x2="22" y2="4" stroke="var(--brass)" stroke-width="1" stroke-linecap="round"/>
+  <circle cx="2" cy="4" r="2" fill="var(--petrol)"/>
+  <circle cx="22" cy="4" r="2" fill="var(--brass)"/>
+</svg> Pesquisa &amp; expertise</p>
+        <h2>Biotecnologia vegetal aplicada, da bancada ao canavial.</h2>
+        <p>Especialista em biotecnologia da cana-de-açúcar, com domínio de um conjunto raro de tecnologias proprietárias desenvolvidas ao longo de duas décadas.</p>
+      </div>
+      <div class="grid-cards reveal">
+        <div class="rcard">
+          <div class="rnum">01</div>
+          <h3>Prospecção de genes</h3>
+          <p>Genes envolvidos em estresses bióticos e abióticos na cana-de-açúcar.</p>
+        </div>
+        <div class="rcard">
+          <div class="rnum">02</div>
+          <h3>Transformação genética</h3>
+          <p>Transformação da cana e desenvolvimento de eventos geneticamente modificados.</p>
+        </div>
+        <div class="rcard">
+          <div class="rnum">03</div>
+          <h3>Genômica funcional</h3>
+          <p>Compreensão da função de genes e rotas de interesse agronômico.</p>
+        </div>
+        <div class="rcard">
+          <div class="rnum">04</div>
+          <h3>Edição gênica</h3>
+          <p>Tecnologias de precisão para características-alvo no genoma.</p>
+        </div>
+        <div class="rcard">
+          <div class="rnum">05</div>
+          <h3>Micropropagação</h3>
+          <p>Biorreatores de imersão temporária para multiplicação clonal em escala.</p>
+        </div>
+        <div class="rcard">
+          <div class="rnum">06</div>
+          <h3>Diagnóstico de doenças</h3>
+          <p>Desenvolvimento de métodos para detecção de doenças da cana.</p>
+        </div>
+        <div class="rcard">
+          <div class="rnum">07</div>
+          <h3>Insumos químicos e biológicos</h3>
+          <p>Testes e validação de produtos no laboratório e no campo.</p>
+        </div>
+        <div class="rcard">
+          <div class="rnum">08</div>
+          <h3>Cana geneticamente modificada</h3>
+          <p>Produtividade, tolerância hídrica, parede celular e resistência a herbicidas.</p>
+        </div>
+      </div>
+      <p class="research-note reveal"><span class="bar"></span> Desde 2016, à frente de projetos de pesquisa público-privados voltados ao desenvolvimento de cana geneticamente modificada — unindo ciência de fronteira a aplicação industrial real.</p>
+    </div>
+  </section>
+
+  <!-- ===== VISAO ===== (anchor handled by thesis content; this links to thesis idea) -->
+  <section class="values-wrap" id="visao">
+    <div class="wrap section">
+      <div class="values-grid">
+        <div class="reveal">
+          <p class="eyebrow"><svg class="node-mark" viewBox="0 0 24 8" aria-hidden="true" focusable="false">
+  <line x1="2" y1="4" x2="22" y2="4" stroke="var(--brass)" stroke-width="1" stroke-linecap="round"/>
+  <circle cx="2" cy="4" r="2" fill="var(--petrol)"/>
+  <circle cx="22" cy="4" r="2" fill="var(--brass)"/>
+</svg> Valores</p>
+          <h2 style="font-size:clamp(1.7rem,3.4vw,2.4rem);line-height:1.12;letter-spacing:-.018em;margin-bottom:1.6rem">O que sustenta o trabalho — e o ambiente.</h2>
+          <div class="vlist">
+            <div class="vitem"><span class="vk">01</span><div><div class="vt">Comprometimento</div><div class="vd">Dar o melhor de si em cada etapa, do experimento à entrega.</div></div></div>
+            <div class="vitem"><span class="vk">02</span><div><div class="vt">Trabalho em equipe</div><div class="vd">Um ambiente construído para que cada pessoa cresça e contribua.</div></div></div>
+            <div class="vitem"><span class="vk">03</span><div><div class="vt">Interesse</div><div class="vd">Curiosidade genuína como motor da boa ciência.</div></div></div>
+          </div>
+          <div class="character">
+            <span class="tag">Solução real de problemas</span>
+            <span class="tag">Rigor científico</span>
+            <span class="tag">Conhecimento em inovação</span>
+          </div>
+        </div>
+        <div class="pullquote reveal">
+          <q>Sozinha, eu não chegaria a lugar nenhum.</q>
+          <div class="attr">— Dra. Silvana Creste</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== LEGADO ===== -->
+  <section class="section legacy" id="legado">
+    <div class="wrap">
+      <div class="section-head reveal" style="margin-bottom:clamp(1.6rem,3vw,2.4rem)">
+        <p class="eyebrow"><svg class="node-mark" viewBox="0 0 24 8" aria-hidden="true" focusable="false">
+  <line x1="2" y1="4" x2="22" y2="4" stroke="var(--brass)" stroke-width="1" stroke-linecap="round"/>
+  <circle cx="2" cy="4" r="2" fill="var(--petrol)"/>
+  <circle cx="22" cy="4" r="2" fill="var(--brass)"/>
+</svg> Legado</p>
+      </div>
+      <div class="legacy-grid">
+        <div class="reveal">
+          <h2>Transformar uma instituição pública em um centro de referência.</h2>
+        </div>
+        <div class="reveal">
+          <p class="big-q">Dar o melhor de si, sonhar alto e não enxergar barreiras para realizar o impossível.</p>
+          <p>Investir na formação de conhecimento e de pessoas. Abrir espaço para que outros também façam parte da história. É essa a lembrança que a Dra. Silvana deseja deixar — a de uma cientista que entendeu, desde cedo, que ciência de impacto se constrói em conjunto.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTATO ===== -->
+  <section class="contact" id="contato">
+    <div class="wrap reveal">
+      <p class="eyebrow"><svg class="node-mark" viewBox="0 0 24 8" aria-hidden="true" focusable="false">
+  <line x1="2" y1="4" x2="22" y2="4" stroke="var(--brass)" stroke-width="1" stroke-linecap="round"/>
+  <circle cx="2" cy="4" r="2" fill="var(--petrol)"/>
+  <circle cx="22" cy="4" r="2" fill="var(--brass)"/>
+</svg> Contato</p>
+      <h2>Vamos levar a ciência ao campo.</h2>
+      <p>Para colaborações de pesquisa, parcerias de inovação e projetos com a cana-de-açúcar.</p>
+      <div class="clinks">
+        <!-- EDITE os links abaixo com os dados reais da Dra. Silvana -->
+        <a class="clink" href="mailto:contato@exemplo.com"><span class="ic">&#9993;</span> contato@exemplo.com</a>
+        <a class="clink" href="#" target="_blank" rel="noopener"><span class="ic">&#128279;</span> Currículo Lattes</a>
+        <a class="clink" href="#" target="_blank" rel="noopener"><span class="ic">&#9913;</span> LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="foot">
+  <div class="wrap">
+    <span class="brand-f"><span class="dot"></span> Dra. Silvana Creste</span>
+    <span>Biotecnologia vegetal · Genética da cana-de-açúcar · Centro de Cana · IAC</span>
+  </div>
+</footer>
+
+<script>
+  // Scroll reveal
+  (function(){
+    var els = document.querySelectorAll('.reveal');
+    if(!('IntersectionObserver' in window)){
+      els.forEach(function(e){e.classList.add('in');});
+      return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
+      });
+    }, {threshold:0.12, rootMargin:"0px 0px -8% 0px"});
+    els.forEach(function(e){io.observe(e);});
+  })();
+</script>
+</body>
+</html>
